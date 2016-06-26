@@ -1,0 +1,12 @@
+﻿.grid td, .grid th{
+  text-align:center;
+    padding: 5px;
+    margin: 5px;
+}
+
+.text-align-left {
+    text-align: left !important;
+    padding: 5px;
+    margin: 5px;
+}
+

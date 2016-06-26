@@ -1,0 +1,102 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DiagnosticCenterBillManagementSystem.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Diagnostic Center</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/jQueryValidation.css" rel="stylesheet" />
+    <link href="Content/GridviewStyle.css" rel="stylesheet" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet" type="text/css" />
+
+    <style>
+        label.error {
+            color: red;
+            float: left;
+            margin: -25px 5px 5px 210px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <form id="mainForm" runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <%--                    <a class="navbar-brand" runat="server" href="~/">Diagnostic Center</a>--%>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+
+                        <li><a runat="server" href="~/">Home</a></li>
+
+                        <%--<li><a runat="server" href="~/UI/HomePage.aspx">Home</a></li>--%>
+
+                        <li><a runat="server" href="~/UI/TestTypeSetupUI.aspx">Test Type</a></li>
+                        <li><a runat="server" href="~/UI/TestSetupUI.aspx">Test</a></li>
+                        <li><a runat="server" href="~/UI/TestRequestUI.aspx">Test Request</a></li>
+                        <li><a runat="server" href="~/UI/PaymentUI.aspx">Payment</a></li>
+
+                        <li><a runat="server" href="~/UI/TestWiseReportUI.aspx">Test Wise Report</a></li>
+                        <li><a runat="server" href="~/UI/TypeWiseReportUI.aspx">Type Wise Report</a></li>
+                        <li><a runat="server" href="~/UI/UnpaidBillReport.aspx">Unpaid Bill</a></li>
+                        <%--<li><a runat="server" href="~/UI/Team.aspx">Team</a></li>--%>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer style="text-align: center">
+                <p>&copy; <%: DateTime.Now.Year %> - Developed by Simple Coders</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>
